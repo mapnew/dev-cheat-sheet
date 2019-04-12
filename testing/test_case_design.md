@@ -12,6 +12,10 @@
   - 性能
   - 兼容性
 
+举个例子：用户登录功能：在网页上输入用户名和密码，然后点击确认按钮，验证下是否登录成功。
+
+[登录功能通用测试用例设计](https://blog.51cto.com/andyboge/1950371) 或 [登录功能通用测试用例设计](https://www.cnblogs.com/jpr-ok/p/6418492.html)
+
 Base Practice：在工程实践中，由于时间和经济成本，很难穷尽所有可能的组合，一般根据具体风险来决定测试范围和优先级，在质量和成本之间寻找平衡点。
 
 
@@ -56,3 +60,8 @@ Base Practice：在工程实践中，由于时间和经济成本，很难穷尽�
 
 
 
+## 出处
+
+[你真的懂测试吗？从“用户登录”测试谈起](<https://time.geekbang.org/column/article/10030>)
+
+[如何设计一个“好的”测试用例？](<https://time.geekbang.org/column/article/10150>)
