@@ -31,8 +31,8 @@ size ``99884
 
 1. 确保本机安装过 LFS, 可以通过 `git lfs env`确认
 
-2. 使用 `git lfs track` 追踪需要使用 Git LFS 管理的文件，如下，该命令会修改`.gitattribute`文件，个人不推荐手动修改 `.gitattribute`
-
+2. 使用 `git lfs track` 追踪需要使用 Git LFS 管理的文件，如下，该命令会修改`.gitattribute`文件，个人不推荐手动修改 `.gitattribute`。
+   
    ```shell
    # 假设仓库中新增了两个大文件 video.h264 和 common.a;
    # 使用LFS来管理 .a 和 .h264 类型文件
@@ -40,12 +40,10 @@ size ``99884
    $ git lfs track "*.h264"
    # 使用引号，可以确保将来添加的 .h264 和 .a 也会用 LFS 管理
     
-    
    # 确保 .gitattributes 被git追踪
    $ git add .gitattributes
    $ git add video.h264 common.a
    $ git commit "add static library and video"
-   
    ```
 
 3. 运行`git lfs ls-files` 可以查看已经用 lfs 追踪的大文件，也可以运行 `git lfs track` 查看当前使用 Git LFS 管理的匹配列表

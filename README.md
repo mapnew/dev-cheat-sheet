@@ -1,4 +1,4 @@
-# dev-notes
+# dev cheat sheet
 
-
+> Personal cheat sheet.
 
