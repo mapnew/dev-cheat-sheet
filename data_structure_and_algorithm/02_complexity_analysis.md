@@ -37,19 +37,83 @@ T(n) 表示代码执行的时间；n 表示数据规模的大小；f(n) 表示�
 
 ##  时间复杂度分析
 
-- 只关注循环执行次数最多的那一段代码
+- 几个分析技巧，并不用记忆：
+  - 只关注循环执行次数最多的那一段代码
+  - 加法原则：总复杂度等于量级最大的那段代码的复杂度
+    如果 T1（n）= O（f（n）），T2（n）=O（g（n））, 则
+    T（n） = T1（n）+ T2（n）= O（max(f（n）+ g（n）)）
 
-  ```
-  int cal(int n){ 
-  	int sum = 0;
-  	int i = 1;
-  	for (; i <= n; ++i){
-		sum = sum + i;
-  	} 
-  	return sum;
-  }
-  ```
-  
-  
+  - 乘法原则：嵌套代码的复杂度等于嵌套内外代码复杂度的乘积，公式为 T（n）= T1（n）* T2（n）= O（f（n）* g（n））
+
+### 常见的时间复杂度
+
+![img](../resource/common_algorithm_complexity.jpg)
+
+
+
+常量级时间复杂度 O（1）
+
+一般情况下，只要算法中不存在循环语句、递归语句，即使有成千上万行的代码，其时间复杂度也是Ο(1)。
+
+```c
+void cal(int n) {
+        int i = 0;
+        int j = 0;
+        int sum = 0;
+        sum = i + j;
+}
+```
+
+
+
+对数阶O（log(n)）
+
+```c++
+int i = 1;
+while(i < n){
+  i = 2 *i;
+}
+```
+
+变量 i 的值从 1 开始取，每循环一次就乘以 2。当大于 n 时，循环结束。
+
+2^x=n
+
+x=log2n
+
+$\log n$
+
+
+
+###### 线性对数阶O（nlog（n））
+
+```c
+void cal(int n) {
+        for (int j = 0; j < n; j++) {
+            int i = 1;
+            int sum = 0;
+            while(i < n){
+                i = 2 *i;
+            }
+        }  
+    }
+```
+
+至于平方阶、立方阶、k次方阶则是多个循环嵌套而成，这里就不写代码了。
+
+###### 特殊情况O（m+n）、O（m*n）
+
+```c
+void cal(int n, int m) {
+        for (int i = 0; i < n; i++) {
+            //do something
+        }
+        
+        for (int j = 0; j < m; j++) {
+            //do something
+        }
+    }
+```
+
 
 
